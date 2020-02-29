@@ -1,0 +1,1 @@
+{"jobID":"fb1d3332-2319-f783-1e1d-9fbb150ffe89","spec":{"type":"policy","cause":{"Message":"","User":"Chris Carty \u003cchriscartydev@gmail.com\u003e"},"spec":{"demo-app:deployment/myhello-world-app":{"add":{"automated":"true"},"remove":{}}}},"result":null}
