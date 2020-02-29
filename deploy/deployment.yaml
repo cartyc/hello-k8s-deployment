@@ -4,6 +4,8 @@ kind: Deployment
 metadata:
   name: myhello-world-app
   namespace: demo-app
+  annotations:
+    fluxcd.io/automated: 'true'
 spec:
   selector:
     matchLabels:
