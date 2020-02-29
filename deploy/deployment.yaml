@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: myhello-world-app
   annotations:
-    flux.weave.works/automated: "true"
+    fluxcd.io/automated: "true"
 spec:
   selector:
     matchLabels:
