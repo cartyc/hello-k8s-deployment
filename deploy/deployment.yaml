@@ -3,9 +3,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myhello-world-app
-  annotations:
-    fluxcd.io/automated: "true"
-    fluxcd.io/tag.myapp: glob:*
 spec:
   selector:
     matchLabels:
