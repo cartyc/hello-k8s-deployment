@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16,7 +17,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: macintoshprime/hello-kubernetes:ccfe2ef36f87bf229ce2de0f9946a14e8c9fa0c9
+        image: macintoshprime/hello-kubernetes:b7912f57a0c67074fb4b823173e5589f663b0f0e
         resources:
           limits:
             memory: "128Mi"
