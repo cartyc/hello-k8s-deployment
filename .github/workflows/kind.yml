@@ -22,3 +22,4 @@ jobs:
         kubectl get nodes -o wide
         kubectl get pods --all-namespaces -o wide
         kubectl get services --all-namespaces -o wide
+        kubectl apply -f deploy/
