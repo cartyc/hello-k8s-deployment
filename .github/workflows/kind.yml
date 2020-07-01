@@ -2,9 +2,21 @@
 name: Kind
 on: [push, pull_request]
 jobs:
+
+  validation:
+    name: Create a Kind cluster
+    runs-on: [ubuntu-latest]
+    container: macintoshprime/kubectl:v1.17-git
+    steps:
+    - uses: actions/checkout@v1
+    - name: Validate YAML
+      run: |
+       kubeval --strict -d deploy/
+
   test-unit:
     name: Create a Kind cluster
     runs-on: [ubuntu-latest]
+    needs: validation
     steps:
     - uses: actions/checkout@v1
     - uses: actions/setup-go@v1
@@ -24,4 +36,5 @@ jobs:
         kubectl get services --all-namespaces -o wide
     - name: Deploy application and test
       run: | 
+        kubectl create namespace demo-app
         kubectl apply -f deploy/
