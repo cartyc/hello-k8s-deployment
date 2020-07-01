@@ -15,6 +15,7 @@ jobs:
 
   policy-check:
     name: validate policy
+    needs: validation
     runs-on: ubuntu-latest
     container: macintoshprime/kubectl:v1.17-git
     steps:
@@ -29,7 +30,7 @@ jobs:
   test-unit:
     name: Create a Kind cluster
     runs-on: [ubuntu-latest]
-    needs: validation
+    needs: policy-check
     steps:
     - uses: actions/checkout@v1
     - uses: actions/setup-go@v1
