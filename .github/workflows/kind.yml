@@ -20,12 +20,12 @@ jobs:
     container: macintoshprime/kubectl:v1.17-git
     steps:
     - name: Deny latest container image tags
-        run: |
-            pwd
-            cd /kubeknife
-            mkdir policy
-            git clone https://github.com/cartyc/opa-policies.git policy
-            conftest test -p policy deploy/
+      run: |
+          pwd
+          cd /kubeknife
+          mkdir policy
+          git clone https://github.com/cartyc/opa-policies.git policy
+          conftest test -p policy deploy/
 
   test-unit:
     name: Create a Kind cluster
