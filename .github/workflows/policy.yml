@@ -9,4 +9,4 @@ jobs:
     - uses: actions/checkout@v1
     - name: Validate YAML
       run: |
-       kubeval --strict deploy/
+       kubeval --strict -d deploy/
