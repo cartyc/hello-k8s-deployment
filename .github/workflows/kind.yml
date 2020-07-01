@@ -22,4 +22,6 @@ jobs:
         kubectl get nodes -o wide
         kubectl get pods --all-namespaces -o wide
         kubectl get services --all-namespaces -o wide
+    - name: Deploy application and test
+      run: | 
         kubectl apply -f deploy/
