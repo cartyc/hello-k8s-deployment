@@ -4,7 +4,7 @@ on: [push, pull_request]
 jobs:
 
   validation:
-    name: Create a Kind cluster
+    name: Validate manifests
     runs-on: [ubuntu-latest]
     container: macintoshprime/kubectl:v1.17-git
     steps:
