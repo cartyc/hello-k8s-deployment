@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: macintoshprime/hello-kubernetes:68dbcb57a43e1b9c9888b8163403a11f7a0edcb3
+        image: macintoshprime/hello-kubernetes:6e8f2751e4664593f13e520979922be00800ebe8
         resources:
           limits:
             memory: "128Mi"
