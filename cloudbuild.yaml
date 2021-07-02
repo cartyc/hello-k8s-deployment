@@ -13,7 +13,7 @@ steps:
       echo "*************************************************************************"
       git config --global user.email "GITHUB_EMAIL" && git config --global user.name "GITHUB_USER"
       mkdir previous
-      git clone https://github.com/GITHUB_USER/k8s-cost-estimator-github.git previous/
+      git clone https://github.com/GITHUB_USER/hello-k8s-deployment.git previous/
       cd previous
       git checkout $_BASE_BRANCH
       cd ..
@@ -22,7 +22,7 @@ steps:
       echo "*************************************************************************"
       echo "** Estimating cost difference between current and previous versions..."
       echo "*************************************************************************"
-      k8s-cost-estimator --k8s wordpress --k8s-prev previous/wordpress --output output.json --environ=GITHUB
+      k8s-cost-estimator --k8s deploy --k8s-prev previous/deploy --output output.json --environ=GITHUB
 
       echo ""
       echo "***************************************************************************************************************"
