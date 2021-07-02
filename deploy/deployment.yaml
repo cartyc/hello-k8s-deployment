@@ -4,8 +4,6 @@ kind: Deployment
 metadata:
   name: myhello-world-app
   namespace: demo-app
-  annotations:
-    flux.weave.works/automated: "true"
 spec:
   selector:
     matchLabels:
@@ -15,6 +13,7 @@ spec:
       labels:
         app: hello-k8s
     spec:
+      replicas: 3
       containers:
       - name: myapp
         image: macintoshprime/hello-kubernetes:6e8f2751e4664593f13e520979922be00800ebe8
