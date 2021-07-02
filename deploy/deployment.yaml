@@ -15,7 +15,7 @@ spec:
     spec:
       replicas: 3
       containers:
-      - name: myawesomeapp
+      - name: my-awesome-app
         image: macintoshprime/hello-kubernetes:6e8f2751e4664593f13e520979922be00800ebe8
         resources:
           limits:
