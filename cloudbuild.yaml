@@ -1,6 +1,6 @@
 steps:
 
-- name: northamerica-northeast1-docker.pkg.dev/GCP_PROJECT_ID/docker-repo/k8s-cost-estimator:v0.0.1
+- name: northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/docker-repo/k8s-cost-estimator:v0.0.1
   entrypoint: 'bash'
   args: 
     - '-c'
@@ -13,7 +13,7 @@ steps:
       echo "*************************************************************************"
       git config --global user.email "GITHUB_EMAIL" && git config --global user.name "GITHUB_USER"
       mkdir previous
-      git clone https://github.com/GITHUB_USER/hello-k8s-deployment.git previous/
+      git clone https://github.com/cartyc/hello-k8s-deployment.git previous/
       cd previous
       git checkout $_BASE_BRANCH
       cd ..
@@ -43,7 +43,7 @@ steps:
         fi
       }
 
-      comments_url="https://api.github.com/repos/GITHUB_USER/k8s-cost-estimator-github/issues/$_PR_NUMBER/comments"
+      comments_url="https://api.github.com/repos/cartyc/hello-k8s-deployment/issues/$_PR_NUMBER/comments"
       comments_body="$(cat output.json)"
       createObject $$comments_url "$$comments_body"
 
@@ -55,9 +55,6 @@ steps:
           echo "****************************************************************************************"
           echo "** Possible cost increase bigger than \$ $$COST_USD_THRESHOLD USD detected. Requesting FinOps approval ..."
           echo "****************************************************************************************"   
-          reviewers_url="https://api.github.com/repos/GITHUB_USER/k8s-cost-estimator-github/pulls/$_PR_NUMBER/requested_reviewers"
-          reviewers_body="{\"reviewers\":[\"$_GITHUB_FINOPS_REVIEWER_USER\"]}"
-          createObject $$reviewers_url "$$reviewers_body"
         else
           echo ""
           echo "****************************************************************************************************************"
